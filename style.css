@@ -83,13 +83,14 @@ span {
   text-align: center;
   
 }
-.data-modal {
+.modal {
   align-items: center;
   justify-content: center;
   text-align: center;
+  transition: 0.5s;
 }
 
-.modal {
+.data-modal {
   margin-left: 40%;
   margin-top: 3.2%;
   top: 0;
@@ -102,17 +103,22 @@ span {
   height: 638px;
   width: 370px;
   background: whitesmoke;
+  box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  pointer-events: none;
   padding: 0;
   transition: 0.5s;
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 
-.active .modal {
+.open .data-modal  {
   opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
-.close  {
+.data-modal-close  {
   display: flex;
   position: absolute;
   font-size: 30px;
@@ -121,12 +127,14 @@ span {
   font-weight: 300;
   font-family: sans-serif;
   cursor: pointer;
+  transition: 0.5s;
 }
-.close .toggle-close {
+.data-modal-close .close {
+  display: none;
 
 }
 
-.close:hover {
+.data-modal-close:hover {
   color: red;
   transform: scale(1.1);
 }
@@ -141,7 +149,9 @@ span {
   letter-spacing: 1.12px;
 }
 
-.modal-btn {
+.data-modal-open {
+  color: whitesmoke;
+  cursor: pointer;
   width: 150px;
   height: 50px;
   background: #2E2F42;
@@ -154,13 +164,9 @@ span {
   font-family: sans-serif;
 
 }
-.modal-btn:hover {
+.data-modal-open:hover {
   background: transparent;
-  color: #0ef;
-}
-.modal-btn a {
-  color: white;
-  text-decoration: none;
+  color: #4bddf7;
 }
 
 
