@@ -64,7 +64,7 @@ span {
   opacity: 1;
 }
 
-.content1 { 
+.content { 
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -78,47 +78,41 @@ span {
   z-index: 1;
 }
 
-.content2 {
-  align-items: center;
-  text-align: center;
-  
-}
-.modal {
+/* modal */
+
+.modal1 {
   align-items: center;
   justify-content: center;
   text-align: center;
   transition: 0.5s;
 }
 
-.data-modal {
+.modal  {
   margin-left: 40%;
-  margin-top: 3.2%;
-  top: 0;
   position: absolute;
   right: 0;
   left: 0;
+  top: 0;
+  transform: translate(-50%, -50%) scale(0.1);
   border-radius: 25px;
-  border: solid black 2px;
-  align-items: center;
-  height: 638px;
+  height: 620px;
   width: 370px;
   background: whitesmoke;
   box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-  pointer-events: none;
-  padding: 0;
-  transition: 0.5s;
-  opacity: 0;
-  pointer-events: none;
   visibility: hidden;
-}
-
-.open .data-modal  {
-  opacity: 1;
+  transition: tranform 0.4s, top 0.4s;
   pointer-events: auto;
-  visibility: visible;
+  position: fixed;
 }
 
-.data-modal-close  {
+.open-modal {
+  visibility: visible;
+  top: 41%;
+  left:  10%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn1  {
   display: flex;
   position: absolute;
   font-size: 30px;
@@ -129,16 +123,20 @@ span {
   cursor: pointer;
   transition: 0.5s;
 }
-.data-modal-close .close {
-  display: none;
 
-}
 
-.data-modal-close:hover {
+.btn1:hover {
   color: red;
-  transform: scale(1.1);
+  transform: scale(1.5);
+  pointer-events: auto;
 }
-.content1 h1{
+
+.hidden {
+  display: none;
+}
+
+
+.content h1{
   font-size: 75px;
   text-align: center;
   color: var(--WHITE, #FFF);
@@ -149,7 +147,7 @@ span {
   letter-spacing: 1.12px;
 }
 
-.data-modal-open {
+.btn {
   color: whitesmoke;
   cursor: pointer;
   width: 150px;
@@ -164,7 +162,7 @@ span {
   font-family: sans-serif;
 
 }
-.data-modal-open:hover {
+.btn:hover {
   background: transparent;
   color: #4bddf7;
 }
@@ -192,7 +190,7 @@ span {
 }
 
 .sign .boxes:hover {
-  transform: scale(.8);
+  transform: scale(.9);
   z-index: 3;
 }
 
@@ -254,7 +252,7 @@ span {
 }
 
 .row:hover {
-  transform: scale(1.1);
+  transform: scale(.9);
   z-index: 3;
 }
 
